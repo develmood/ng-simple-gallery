@@ -1,5 +1,5 @@
 angular
-    .module('ngSimpleGallery', [])
+    .module('ng-simple-gallery', [])
     .directive('ngGallery', ['$timeout', '$animate', function ($timeout, $animate) {
         return {
             restrict: 'AE',
@@ -20,7 +20,7 @@ angular
                         scope.animationClassNext = 'slide-left';
                         scope.animationClassPrev = 'slide-right';
                         break;
-                    default: // fade
+                    default: 
                         scope.animationClassNext = 'fade';
                         scope.animationClassPrev = 'fade';
                 }

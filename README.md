@@ -1,5 +1,6 @@
 # ngSimpleGallery
-A simple image gallery with some options
+A simple full responsive image gallery with some options. Images are loading on click.
+
 
 ## Install Instruction ##
 ### Bower ###
@@ -39,3 +40,6 @@ angular
 <ng-gallery source="ctrl.gallery"></ng-gallery> OR 
 <div ng-gallery source="ctrl.gallery"></div>
 ```
+
+### Options ###
+* animation: slide | fade

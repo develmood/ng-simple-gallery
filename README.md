@@ -1,1 +1,2 @@
-# ng-simple-gallery
+# angular-gallery
+just in development

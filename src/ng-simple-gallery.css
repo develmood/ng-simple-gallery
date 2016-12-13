@@ -32,13 +32,13 @@
 }
 
 .gallery-container .fade {
-    animation: fade 1s 1;
+    animation: fade 0.5s 1;
 }
 .gallery-container .slide-left {
-    animation: slideleft 1s 1;
+    animation: slideleft 0.5s 1;
 }
 .gallery-container .slide-right {
-    animation: slideright 1s 1;
+    animation: slideright 0.5s 1;
 }
 @keyframes fade {
     0%      { opacity: 1; }

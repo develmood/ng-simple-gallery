@@ -1,5 +1,5 @@
 angular
-    .module('ng-simple-gallery', [])
+    .module('ngSimpleGallery', [])
     .directive('ngGallery', ['$timeout', '$animate', function ($timeout, $animate) {
         return {
             restrict: 'AE',
@@ -32,7 +32,7 @@ angular
                     // wait for animation and just before the end switch image
                     $timeout(function() {
                         scope.currentIndex = scope.currentIndex == scope.images.length-1 ? 0 : scope.currentIndex+1;
-                    }, 900);
+                    }, 500);
                     // just add and remove an animated class
                     $animate.addClass(scope.img[0], scope.animationClassNext).then(function () {
                         $animate.removeClass(scope.img[0], scope.animationClassNext);
@@ -46,7 +46,7 @@ angular
                     // wait for animation and just before the end switch image
                     $timeout(function() {
                         scope.currentIndex = scope.currentIndex == 0 ? scope.images.length-1 : scope.currentIndex-1;
-                    }, 900)
+                    }, 500)
                     // just add and remove an animated class
                     $animate.addClass(scope.img[0], scope.animationClassPrev).then(function() {
                         $animate.removeClass(scope.img[0], scope.animationClassPrev);

@@ -5,9 +5,14 @@ angular
             restrict: 'AE',
             replace: true,
             scope: {
-                source: '=source'
+                source: '@'
             },
             link: function (scope, elem, attrs) {
+                // json or not, this doesnt matter
+                try {
+                    scope.source = JSON.parse(scope.source);
+                } catch(e) {}
+
                 scope.images = scope.source.images;
                 scope.config = scope.source.config;
                 scope.currentIndex = 0;

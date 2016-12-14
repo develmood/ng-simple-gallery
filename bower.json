@@ -1,5 +1,5 @@
 {
-    "name": "ngSimpleGallery",
+    "name": "ng-simple-gallery",
     "version": "0.1.0",
     "main": "dist/ng-simple-gallery.min.js",
     "ignore": [

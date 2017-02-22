@@ -10,9 +10,9 @@ bower install ng-simple-gallery --save
 ## Setup ##
 Include the following files into your project
 ```
-bower_components/ng-simple-gallery/dist/ng-simple-gallery.min.css
 bower_components/angular/angular.min.js
 bower_components/angular-animate/angular-animate.min.js
+bower_components/angular-touch/angular-touch.js
 bower_components/ng-simple-gallery/dist/ng-simple-gallery.min.js
 ```
 

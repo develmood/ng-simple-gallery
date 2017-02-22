@@ -74,6 +74,9 @@ angular
             '   </div>' +
             '   <div class="prev" ng-click="prev()"></div>' +
             '   <div class="next" ng-click="next()"></div>' +
+            '   <ul class="thumb-list row">' +
+            '       <li ng-repeat="image in images" ng-class="image.url == currentImage.url ? \'active\' : \'\'">&#149;</li>' +
+            '   </ul>' + 
             '</div>'
         }
     }]);

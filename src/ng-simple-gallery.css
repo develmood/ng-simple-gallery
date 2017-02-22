@@ -40,6 +40,23 @@
 .gallery-container .slide-right {
     animation: slideright 0.5s 1;
 }
+.thumb-list {
+    list-style: none;
+    margin: 0; padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    font-size: 40px;
+    display: flex;
+    width:100%;
+    justify-content: center;
+}
+.thumb-list li {
+    color: #ccc;
+}
+.thumb-list li.active {
+    color: #000;
+}
 @keyframes fade {
     0%      { opacity: 1; }
     100%    { opacity: 0; }

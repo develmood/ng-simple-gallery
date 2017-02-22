@@ -1,6 +1,6 @@
 angular
     .module('ngSimpleGallery', [])
-    .directive('ngGallery', ['$timeout', '$animate', function ($timeout, $animate) {
+    .directive('ngGallery', ['$timeout', '$animate', '$interval', function ($timeout, $animate, $interval) {
         return {
             restrict: 'AE',
             replace: true,
@@ -65,6 +65,14 @@ angular
                 scope.$watch('nextIndex', function() {
                      scope.nextImage = scope.images[scope.nextIndex];
                 })
+
+                if(scope.config.interval) {
+                    $interval(function() {
+                        scope.next();                    
+                    }, scope.config.interval * 1000);
+                }
+            
+                
                
             },
             template: '<div class="gallery-container">' +

@@ -20,17 +20,18 @@ bower_components/ng-simple-gallery/dist/ng-simple-gallery.min.js
 ### js ###
 ```
 angular
-    .module('TestApp', ['ngAnimate', 'ngSimpleGallery'])
+    .module('AngularApp', ['ngAnimate', 'ngTouch', 'ngSimpleGallery'])
     .controller('MainController', function($scope){
 
         this.gallery = {
             config: {
-                animation: 'slide' // default is fade
+                animation: 'fade',  // default is fade
+                interval: 3         // in seconds
             },
             images: [
-                {title: 'Title 1', url: 'img1.jpg'},
-                {title: 'Title 2', url: 'img2.png'},
-                {title: 'Title 3', url: 'img3.gif'},
+                {title: 'Title 1', url: 'img/img1.jpg'},
+                {title: 'Title 2', url: 'img/img2.jpg'},
+                {title: 'Title 3', url: 'img/img3.jpg'},
             ]
         }
     });

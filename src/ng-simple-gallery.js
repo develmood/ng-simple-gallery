@@ -69,8 +69,8 @@ angular
             },
             template: '<div class="gallery-container">' +
             '   <div class="gallery-item">' +
-            '       <img ng-cloak class="current-img" ng-src="{{ currentImage.url }}">' +
-            '       <img ng-cloak class="next-img" ng-src="{{ nextImage.url }}">' +
+            '       <img ng-cloak class="current-img" ng-src="{{ currentImage.url }}" ng-swipe-left="prev()">' +
+            '       <img ng-cloak class="next-img" ng-src="{{ nextImage.url }}" ng-swipe-right="next()">' +
             '   </div>' +
             '   <div class="prev" ng-click="prev()"></div>' +
             '   <div class="next" ng-click="next()"></div>' +

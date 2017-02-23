@@ -1,5 +1,5 @@
 angular
-    .module('ngSimpleGallery', [])
+    .module('ngSimpleGallery', ['ngTouch'])
     .directive('ngGallery', ['$timeout', '$animate', '$interval', function ($timeout, $animate, $interval) {
         return {
             restrict: 'AE',
@@ -31,7 +31,8 @@ angular
                 }
 
                 /*** next item ***/
-                scope.next = function () { 
+                scope.next = function () {
+                    
                     // first set the next picture to the after next picture
                     scope.nextIndex = scope.nextIndex == scope.images.length-1 ? 0 : scope.nextIndex+1;
                     // wait for animation and just before the end switch image
@@ -46,6 +47,7 @@ angular
 
                 /*** previous item ***/
                 scope.prev = function () {
+            
                     // first set the next picture to the next picture
                     scope.nextIndex = scope.nextIndex == 0 ? scope.images.length-1 : scope.nextIndex-1;
                     // wait for animation and just before the end switch image
@@ -67,16 +69,21 @@ angular
                 })
 
                 if(scope.config.interval) {
-                    $interval(function() {
-                        scope.next();                    
+                    scope.interval = $interval(function() {
+                        scope.next();            
                     }, scope.config.interval * 1000);
+
+                    scope.stopInterval = function(stop) {
+                        if(stop == true) {
+                            $interval.cancel(scope.interval);
+                        }
+                    }
                 }
-            
                 
                
             },
-            template: '<div class="gallery-container">' +
-            '   <div class="gallery-item" ng-swipe-left="prev()"  ng-swipe-right="next()">' +
+            template: '<div class="gallery-container" ng-swipe-left="prev(); stopInterval(true);" ng-swipe-right="next(); stopInterval(true);">' +
+            '   <div class="gallery-item">' +
             '       <img ng-cloak class="current-img" ng-src="{{ currentImage.url }}">' +
             '       <img ng-cloak class="next-img" ng-src="{{ nextImage.url }}">' +
             '   </div>' +

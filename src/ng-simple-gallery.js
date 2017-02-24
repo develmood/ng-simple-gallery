@@ -82,7 +82,7 @@ angular
                 
                
             },
-            template: '<div class="gallery-container" ng-swipe-left="prev(); stopInterval(true);" ng-swipe-right="next(); stopInterval(true);">' +
+            template: '<div class="gallery-container" ng-swipe-left="next(); stopInterval(true);" ng-swipe-right="prev(); stopInterval(true);">' +
             '   <div class="gallery-item">' +
             '       <img ng-cloak class="current-img" ng-src="{{ currentImage.url }}">' +
             '       <img ng-cloak class="next-img" ng-src="{{ nextImage.url }}">' +

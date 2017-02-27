@@ -35,10 +35,10 @@
     animation: fade 0.5s 1;
 }
 .gallery-container .slide-left {
-    animation: slideleft 0.5s 1;
+    animation: slideleft 1s 1;
 }
 .gallery-container .slide-right {
-    animation: slideright 0.5s 1;
+    animation: slideright 1s 1;
 }
 .thumb-list {
     list-style: none;

@@ -38,7 +38,7 @@ angular
                     // wait for animation and just before the end switch image
                     $timeout(function() {
                         scope.currentIndex = scope.currentIndex == scope.images.length-1 ? 0 : scope.currentIndex+1;
-                    }, 500);
+                    }, 1000);
                     // just add and remove an animated class
                     $animate.addClass(scope.img[0], scope.animationClassNext).then(function () {
                         $animate.removeClass(scope.img[0], scope.animationClassNext);
@@ -53,7 +53,7 @@ angular
                     // wait for animation and just before the end switch image
                     $timeout(function() {
                         scope.currentIndex = scope.currentIndex == 0 ? scope.images.length-1 : scope.currentIndex-1;
-                    }, 500)
+                    }, 1000)
                     // just add and remove an animated class
                     $animate.addClass(scope.img[0], scope.animationClassPrev).then(function() {
                         $animate.removeClass(scope.img[0], scope.animationClassPrev);
@@ -87,8 +87,8 @@ angular
             '       <img ng-cloak class="current-img" ng-src="{{ currentImage.url }}">' +
             '       <img ng-cloak class="next-img" ng-src="{{ nextImage.url }}">' +
             '   </div>' +
-            '   <div class="prev" ng-click="prev()"></div>' +
-            '   <div class="next" ng-click="next()"></div>' +
+            '   <div class="prev" ng-click="prev(); stopInterval(true);"></div>' +
+            '   <div class="next" ng-click="next(); stopInterval(true);"></div>' +
             '   <ul class="thumb-list">' +
             '       <li ng-repeat="image in images" ng-class="image.url == currentImage.url ? \'active\' : \'\'">&#149;</li>' +
             '   </ul>' + 
